@@ -26,7 +26,7 @@ function createBox(sol, lastUtc, AT, WD) {
             <p>
               <span class="label">Sol</span>
               <span class="fat">${sol}</span><br>
-              <span class="fat">${locMonth[lastUtc.getMonth()]} ${lastUtc.getDate()}</span>
+              <span class="fat">${locMonth[lastUtc.getMonth()].substring(0, 3)} ${lastUtc.getDate()}</span>
             </p>
         </div>
         <div class="temperature">
