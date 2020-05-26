@@ -14,6 +14,7 @@ const locMonth = {
 };
 
 window.addEventListener('load', async () => {
+  // GET https: //api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0
   const data = await fetch('http://localhost:5000/insight-weather.json').then(res => res.json());
   latest(data);
   others(data);
