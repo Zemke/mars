@@ -128,6 +128,26 @@
       text-align: center;
       line-height: 2rem;
     }
+
+    .compass { display: inline-block; }
+    .compass::before { content: "\2191"; }
+    .compass.N { transform: scale(-1) rotate(0deg); }
+    .compass.NNE { transform: scale(-1) rotate(22.5deg); }
+    .compass.NE { transform: scale(-1) rotate(45deg); }
+    .compass.ENE { transform: scale(-1) rotate(67.5deg); }
+    .compass.E { transform: scale(-1) rotate(90deg); }
+    .compass.ESE { transform: scale(-1) rotate(112.5deg); }
+    .compass.SE { transform: scale(-1) rotate(135deg); }
+    .compass.SSE { transform: scale(-1) rotate(157.5deg); }
+    .compass.S { transform: scale(-1) rotate(180deg); }
+    .compass.SSW { transform: scale(-1) rotate(202.5deg); }
+    .compass.SW { transform: scale(-1) rotate(225deg); }
+    .compass.WSW { transform: scale(-1) rotate(247.5deg); }
+    .compass.W { transform: scale(-1) rotate(270deg); }
+    .compass.WNW { transform: scale(-1) rotate(292.5deg); }
+    .compass.NW { transform: scale(-1) rotate(315deg); }
+    .compass.NNW { transform: scale(-1) rotate(337.5deg); }
+
   </style>
   <script>
     const locMonth = {
