@@ -15,12 +15,12 @@ const locMonth = {
 
 window.addEventListener('load', async () => {
   const data = await fetch('http://localhost:5000/insight-weather.json').then(res => res.json());
-  console.log('data', data);
   latest(data);
   others(data);
 });
 
-function createBox(sol, lastUtc, AT) {
+function createBox(sol, lastUtc, AT, WD) {
+  console.log("WD", WD);
   return `
         <div class="sol">
             <p>
@@ -36,6 +36,11 @@ function createBox(sol, lastUtc, AT) {
             <span class="large">${Math.round(AT['mn'])}°&#8239;C</span>
           </div>
         </div>
+        <div class="wind">
+          <div>
+            <div class="compass ${WD["compass_point"]}"></div>
+          </div>  
+        </div>
       `;
 }
 
@@ -43,20 +48,19 @@ function latest(data) {
   const sol = [...(data["sol_keys"])].reverse()[0];
   const AT = data[sol]['AT'];
   const lastUtc = new Date(data[sol]['Last_UTC']);
-  console.log(`${locMonth[lastUtc.getMonth()]} ${lastUtc.getDate()}`);
-  document.getElementById('latest').innerHTML = createBox(sol, lastUtc, AT)
+  document.getElementById('latest').innerHTML =
+    createBox(sol, lastUtc, AT, data[sol]["WD"]["most_common"])
 }
 
 function others(data) {
   const others = [...data["sol_keys"]].reverse().splice(1);
-  console.log('others', others);
   const othersElem = document.getElementById('others');
   others.forEach(sol => {
     const div = document.createElement('div');
     div.classList.add('box');
     const AT = data[sol]["AT"];
     const lastUtc = data[sol]["Last_UTC"];
-    div.innerHTML = createBox(sol, new Date(lastUtc), AT);
+    div.innerHTML = createBox(sol, new Date(lastUtc), AT, data[sol]["WD"]["most_common"]);
     othersElem.append(div);
   });
 }

@@ -64,14 +64,13 @@ h3 {
   border: 1px solid rgba(255, 255, 255, .3);
   display: flex;
   width: 27rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   padding: 2rem;
 }
 
 #latest .sol {
   white-space: nowrap;
-  padding-right: 4rem;
 }
 
 #others .sol p {
@@ -104,6 +103,11 @@ h3 {
   margin-right: .5rem;
 }
 
+#latest .temperature {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
 .temperature {
   display: flex;
   flex-direction: column;
@@ -117,4 +121,16 @@ h3 {
   align-items: center;
   text-align: center;
   line-height: 2rem;
+}
+
+#latest .wind {
+  font-weight: 500;
+  font-size: 4rem;
+  padding-top: .7rem;
+}
+
+#others .wind {
+  padding-top: 1rem;
+  font-weight: 500;
+  font-size: 1.7rem;
 }
