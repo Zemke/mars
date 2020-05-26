@@ -52,10 +52,49 @@
       top: 367px;
     }
 
+    .spacexLanding {
+      height: .5rem;
+      width: .5rem;
+      border-radius: 100vh;
+      border: none;
+      background-color: rgba(0, 0, 0, .5);
+    }
+
+    .spacexLanding1 {
+      left: 342px;
+      top: 388px;
+    }
+
+    .spacexLanding2 {
+      left: 412px;
+      top: 379px;
+    }
+
+    .spacexLanding3 {
+      left: 415px;
+      top: 376px;
+    }
+
+    .spacexLanding4 {
+      left: 419px;
+      top: 376px;    }
+
+    .spacexLanding5 {
+      left: 424px;
+      top: 378px;
+    }
+
+    .spacexLanding6 {
+      left: 450px;
+      top: 374px;
+    }
+
     .spacexLanding1::after {
-      content: "5 candidate Starship landing sites";
+      content: "candidate Starship landing sites";
       position: absolute;
-      top: 40px;
+      top: -28px;
+      right: -139px;
+      transform: rotate(-10deg);
     }
 
     .olympusMons::after {
@@ -63,7 +102,7 @@
       opacity: 1;
       position: absolute;
       top: 20px;
-      right:0;
+      right: 0;
     }
 
     .tharsisMontes::after {
