@@ -1,0 +1,83 @@
+#map {
+  .imageCtxContainer {
+    position: relative;
+    white-space: nowrap;
+    font-size: .8rem;
+    color: black;
+    font-weight: 500;
+    text-shadow: 0 0 .1rem white;
+
+    > div {
+      position: absolute;
+    }
+
+    .inSightLine {
+      width: 3px;
+      height: 480px;
+      left: 265px;
+      background-color: black;
+    }
+
+    .inSightDot {
+      width: 15px;
+      height: 15px;
+      border-radius: 100vh;
+      left: 259px;
+      top: 480px;
+      background-color: black;
+    }
+
+    .inSightDot::after {
+      content: "InSight Lander";
+      position: absolute;
+      top: 25px;
+    }
+
+    .olympusMons {
+      width: 15px;
+      height: 15px;
+      border-radius: 100vh;
+      background-color: rgba(0, 0, 0, .5);
+      left: 499px;
+      top: 450px;
+    }
+
+    .spacexLanding1 {
+      width: 63px;
+      height: 38px;
+      border-radius: 100vh;
+      background-color: transparent;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      left: 403px;
+      top: 367px;
+    }
+
+    .spacexLanding1::after {
+      content: "5 candidate Starship landing sites";
+      position: absolute;
+      top: 40px;
+    }
+
+    .olympusMons::after {
+      content: "Olympus Mons";
+      opacity: 1;
+      position: absolute;
+      top: 20px;
+      right:0;
+    }
+
+    .tharsisMontes::after {
+      content: "Tharsis Montes";
+      position: absolute;
+      left: 550px;
+      top: 499px;
+      transform: rotate(-55deg);
+    }
+
+    img {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+  }
+}

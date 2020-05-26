@@ -1,4 +1,5 @@
 @use 'insight';
+@use 'map';
 
 @font-face {
   font-family: 'Heebo';
@@ -27,8 +28,7 @@ html, body {
   font-weight: 100;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
+  overflow-y: scroll;
 }
 
 .container {
