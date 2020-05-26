@@ -20,10 +20,7 @@
 html, body {
   padding: 0;
   margin: 0;
-  background-color: black;
-  background-image: url("/insight.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: radial-gradient(closest-side, #9aabc5, #2c3447, #0a0b10);
   color: white;
   font-family: 'Heebo', sans-serif;
   font-weight: 100;
@@ -34,7 +31,13 @@ html, body {
 }
 
 .container {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
   padding: 2rem 2rem;
+  background-image: url("/insight.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1 {
@@ -157,7 +160,7 @@ h3 {
 .description {
   position: absolute;
   text-shadow: 0 0 .3rem black;
-  right: 6rem;
+  right: 4rem;
   top: 11rem;
   width: 23rem;
 }
