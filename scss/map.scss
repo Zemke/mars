@@ -7,8 +7,25 @@
     font-weight: 500;
     text-shadow: 0 0 .1rem white;
 
-    > div {
+    a {
+      color: inherit;
+    }
+
+    > div,
+    > *::before,
+    > *::after {
       position: absolute;
+    }
+
+    > a {
+      position: absolute;
+
+      &.mouseover,
+      &:hover {
+        background-color: rgba(255, 0, 0, .5);
+        color: red;
+        cursor: pointer;
+      }
     }
 
     .inSightLine {
@@ -29,8 +46,8 @@
 
     .inSightDot::after {
       content: "InSight Lander";
-      position: absolute;
-      top: 25px;
+      top: 0;
+      right: 20px;
     }
 
     .olympusMons {
@@ -91,7 +108,6 @@
 
     .spacexLanding1::after {
       content: "candidate Starship landing sites";
-      position: absolute;
       top: -28px;
       right: -139px;
       transform: rotate(-10deg);
@@ -100,18 +116,45 @@
     .olympusMons::after {
       content: "Olympus Mons";
       opacity: 1;
-      position: absolute;
       top: 20px;
       right: 0;
     }
 
     .tharsisMontes::after {
       content: "Tharsis Montes";
-      position: absolute;
       left: 550px;
       top: 499px;
       transform: rotate(-55deg);
     }
+
+    .region {
+      color: lightgray;
+      font-size: 1rem;
+      text-shadow: 0 0 .1rem black;
+      font-variant: all-small-caps;
+      letter-spacing: .2rem;
+    }
+
+    .elysiumPlanitia::before {
+      content: "Elysium\APlanitia";
+      white-space: pre-wrap;
+      top: 465px;
+      left: 300px;
+    }
+
+    .amazonisPlanitia::before {
+      content: "Amazonis\APlanitia";
+      white-space: pre-wrap;
+      top: 410px;
+      left: 380px;
+    }
+
+    .arcadiaPlanitia::before {
+      content: "Arcadia Planitia";
+      top: 328px;
+      left: 350px;
+    }
+
 
     img {
       padding: 0;
