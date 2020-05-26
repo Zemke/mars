@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;500&display=swap" rel="stylesheet">
+  <title>Weather</title>
+  <style>
+    html, body {
+      padding: 0;
+      margin: 0;
+      background-color: black;
+      background-image: url("/insight.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: white;
+      font-family: 'Heebo', sans-serif;
+      font-weight: 100;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+    }
+
+    .container {
+      padding: 2rem 2rem;
+    }
+
+    h1 {
+      font-weight: 100;
+      font-size: 4rem;
+    }
+
+    h2 {
+      font-weight: 100;
+    }
+
+    h3 {
+      font-weight: 100;
+    }
+
+    .fat {
+      font-weight: 500;
+    }
+
+    #latest .large {
+      font-size: 3rem;
+    }
+
+    #others .large {
+      font-size: 1.4rem;
+    }
+
+    #latest .slash {
+      font-size: 6rem;
+    }
+
+    #others .slash {
+      font-size: 3rem;
+    }
+
+    .trans {
+      backdrop-filter: blur(.18rem);
+      -webkit-backdrop-filter: blur(.18rem);
+    }
+
+    #header {
+      display: flex;
+    }
+
+    #latest {
+      border: 1px solid rgba(255, 255, 255, .3);
+      display: flex;
+      width: 27rem;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    #latest .sol {
+      white-space: nowrap;
+      padding-right: 4rem;
+    }
+
+    #others .sol p {
+      white-space: nowrap;
+    }
+
+    .label {
+      font-variant-caps: all-petite-caps;
+      font-size: 1.5rem;
+    }
+
+    #others {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .box {
+      backdrop-filter: blur(.18rem);
+      -webkit-backdrop-filter: blur(.18rem);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 9rem;
+      border: 1px solid rgba(255, 255, 255, .3);
+      padding-bottom: 1.2rem;
+      margin-top: 1rem;
+      margin-right: .5rem;
+    }
+
+    .temperature {
+      display: flex;
+      flex-direction: column;
+      padding-top: .7rem;
+    }
+
+    .temperature > div {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      line-height: 2rem;
+    }
+  </style>
+  <script>
+    const locMonth = {
+      0: "January",
+      1: "February",
+      2: "March",
+      3: "April",
+      4: "May",
+      5: "June",
+      6: "July",
+      7: "August",
+      8: "September",
+      9: "October",
+      10: "November",
+      11: "December",
+    };
+
+    window.addEventListener('load', async () => {
+      const data = await fetch('http://localhost:5000/insight-weather.json').then(res => res.json());
+      console.log('data', data);
+      latest(data);
+      others(data);
+    });
+
+    function createBox(sol, lastUtc, AT) {
+      return `
+        <div class="sol">
+            <p>
+              <span class="label">Sol</span>
+              <span class="fat">${sol}</span><br>
+              <span class="fat">${locMonth[lastUtc.getMonth()]} ${lastUtc.getDate()}</span>
+            </p>
+        </div>
+        <div class="temperature">
+          <div>
+            <span class="large">${Math.round(AT['mx'])}°&#8239;C</span>
+            <span class="slash">/</span>
+            <span class="large">${Math.round(AT['mn'])}°&#8239;C</span>
+          </div>
+        </div>
+      `;
+    }
+
+    function latest(data) {
+      const sol = [...(data["sol_keys"])].reverse()[0];
+      const AT = data[sol]['AT'];
+      const lastUtc = new Date(data[sol]['Last_UTC']);
+      console.log(`${locMonth[lastUtc.getMonth()]} ${lastUtc.getDate()}`);
+      document.getElementById('latest').innerHTML = createBox(sol, lastUtc, AT)
+    }
+
+    function others(data) {
+      const others = [...data["sol_keys"]].reverse().splice(1);
+      console.log('others', others);
+      const othersElem = document.getElementById('others');
+      others.forEach(sol => {
+        const div = document.createElement('div');
+        div.classList.add('box');
+        const AT = data[sol]["AT"];
+        const lastUtc = data[sol]["Last_UTC"];
+        div.innerHTML = createBox(sol, new Date(lastUtc), AT);
+        othersElem.append(div);
+      });
+    }
+  </script>
+</head>
+<body>
+<div class="container">
+
+  <div>
+    <h1>Elysium Planitia</h1>
+  </div>
+
+  <div id="latest" class="trans">
+  </div>
+
+  <div id="header" class="trans">
+  </div>
+
+  <div id="others">
+  </div>
+
+</div>
+</body>
+</html>
