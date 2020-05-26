@@ -6,37 +6,32 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="compass.css">
   <script src="script.js" rel="preload"></script>
   <title>Weather</title>
 </head>
 <body>
 <div class="container">
-
-  <div>
-    <h1>Elysium Planitia</h1>
+  <div id="inSight">
+    <div>
+      <h1>Elysium Planitia</h1>
+    </div>
+    <div id="latest" class="trans">
+    </div>
+    <div class="description">
+      <p>
+        InSight has landed on November 26, 2018 at Elysium Planitia, a plain close to the equator.<br>
+        It’s currently <span id="season"></span> there.
+      </p>
+      <p>
+        You can see min and max temperatures as well as most common wind direction of that day.<br>
+        SOL is a Martian day.
+      </p>
+    </div>
+    <div id="header" class="trans">
+    </div>
+    <div id="others">
+    </div>
   </div>
-
-  <div id="latest" class="trans">
-  </div>
-
-  <div class="description">
-    <p>
-      InSight has landed on November 26, 2018 at Elysium Planitia, a plain close to the equator.<br>
-      It’s currently <span id="season"></span> there.
-    </p>
-    <p>
-      You can see min and max temperatures as well as most common wind direction of that day.<br>
-      SOL is a Martian day.
-    </p>
-  </div>
-
-  <div id="header" class="trans">
-  </div>
-
-  <div id="others">
-  </div>
-
 </div>
 </body>
 </html>
