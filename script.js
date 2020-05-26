@@ -50,7 +50,8 @@ function latest(data) {
   const AT = data[sol]['AT'];
   const lastUtc = new Date(data[sol]['Last_UTC']);
   document.getElementById('latest').innerHTML =
-    createBox(sol, lastUtc, AT, data[sol]["WD"]["most_common"])
+    createBox(sol, lastUtc, AT, data[sol]["WD"]["most_common"]);
+  document.getElementById('season').textContent = data[sol]["Season"];
 }
 
 function others(data) {
