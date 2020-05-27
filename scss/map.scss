@@ -184,6 +184,26 @@
         top: 360px;
         left: 760px;
       }
+
+      &.acidaliaPlanitia::before {
+        content: "Acidalia Planitia";
+        top: 290px;
+        left: 780px;
+      }
+
+      &.utopiaPlanitia::before {
+        content: "Utopia Planitia";
+        top: 340px;
+        left: 146px;
+      }
+
+      &.isidisPlanitia::before {
+        content: "Isidis\APlanitia";
+        white-space: pre-wrap;
+        line-height: 1rem;
+        top: 444px;
+        left: 96px;
+      }
     }
 
     img {
