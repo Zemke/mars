@@ -22,8 +22,8 @@
 
       &.mouseover,
       &:hover {
-        background-color: rgba(255, 0, 0, .5);
-        color: red;
+        background-color: #603315;
+        color: #603315;
         cursor: pointer;
       }
     }
@@ -35,28 +35,51 @@
       background-color: black;
     }
 
-    .inSightDot {
+    .pin {
       width: 15px;
       height: 15px;
       border-radius: 100vh;
-      left: 259px;
-      top: 480px;
-      background-color: black;
+      background-color: rgba(0, 0, 0, .3);
     }
 
-    .inSightDot::after {
-      content: "InSight Lander";
-      top: 0;
-      right: 20px;
+    .inSight {
+      left: 259px;
+      top: 480px;
+
+      &::after {
+        content: "InSight Lander";
+        top: 0;
+        right: 20px;
+      }
     }
 
     .olympusMons {
-      width: 15px;
-      height: 15px;
-      border-radius: 100vh;
-      background-color: rgba(0, 0, 0, .5);
       left: 499px;
       top: 450px;
+
+      &::after {
+        content: "Olympus Mons";
+        opacity: 1;
+        top: 15px;
+        left: -33px;
+      }
+    }
+
+    .tharsisMontes::after {
+      content: "Tharsis Montes";
+      left: 550px;
+      top: 499px;
+      transform: rotate(-55deg);
+    }
+
+    .albaMons {
+      top: 380px;
+      left: 580px;
+
+      &::after {
+        content: "Alba Mons";
+        left: 20px;
+      }
     }
 
     .spacexLanding1 {
@@ -111,20 +134,6 @@
       top: -28px;
       right: -139px;
       transform: rotate(-10deg);
-    }
-
-    .olympusMons::after {
-      content: "Olympus Mons";
-      opacity: 1;
-      top: 20px;
-      right: 0;
-    }
-
-    .tharsisMontes::after {
-      content: "Tharsis Montes";
-      left: 550px;
-      top: 499px;
-      transform: rotate(-55deg);
     }
 
     .region {
@@ -203,6 +212,12 @@
         line-height: 1rem;
         top: 444px;
         left: 96px;
+      }
+
+      &.tharsis::before {
+        content: "Tharsis";
+        top: 50px;
+        left: 50px;
       }
     }
 
