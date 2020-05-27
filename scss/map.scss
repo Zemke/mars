@@ -216,8 +216,14 @@
 
       &.tharsis::before {
         content: "Tharsis";
-        top: 50px;
-        left: 50px;
+        top: 441px;
+        left: 566px;
+      }
+
+      &.arabiaTerra::before {
+        content: "Arabia Terra";
+        top: 430px;
+        left: 850px;
       }
     }
 
