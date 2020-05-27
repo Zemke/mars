@@ -133,28 +133,58 @@
       text-shadow: 0 0 .1rem black;
       font-variant: all-small-caps;
       letter-spacing: .2rem;
-    }
+      text-align: center;
 
-    .elysiumPlanitia::before {
-      content: "Elysium\APlanitia";
-      white-space: pre-wrap;
-      top: 465px;
-      left: 300px;
-    }
+      &.elysiumPlanitia::before {
+        content: "Elysium\APlanitia";
+        white-space: pre-wrap;
+        top: 465px;
+        left: 300px;
+      }
 
-    .amazonisPlanitia::before {
-      content: "Amazonis\APlanitia";
-      white-space: pre-wrap;
-      top: 410px;
-      left: 380px;
-    }
+      &.amazonisPlanitia::before {
+        content: "Amazonis\APlanitia";
+        white-space: pre-wrap;
+        top: 410px;
+        left: 380px;
+      }
 
-    .arcadiaPlanitia::before {
-      content: "Arcadia Planitia";
-      top: 328px;
-      left: 350px;
-    }
+      &.arcadiaPlanitia::before {
+        content: "Arcadia Planitia";
+        top: 328px;
+        left: 350px;
+      }
 
+      &.borealisBasin::before {
+        content: "Borealis Basin";
+        letter-spacing: 1.5rem;
+        top: 150px;
+        left: 380px;
+        font-size: 1.2rem;
+      }
+
+      &.hellasPlanitia::before {
+        content: "Hellas\APlanitia";
+        white-space: pre-wrap;
+        top: 600px;
+        left: 50px;
+      }
+
+      &.argyrePlanitia::before {
+        content: "Argyre\APlanitia";
+        white-space: pre-wrap;
+        top: 645px;
+        left: 740px;
+        line-height: 1rem;
+      }
+
+      &.chrysePlanitia::before {
+        content: "chryse\APlanitia";
+        white-space: pre-wrap;
+        top: 360px;
+        left: 760px;
+      }
+    }
 
     img {
       padding: 0;
