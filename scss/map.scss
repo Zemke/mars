@@ -82,6 +82,17 @@
       }
     }
 
+    .galeCrater {
+      top: 505px;
+      left: 260px;
+
+      &::before {
+        content: "Gale Crater";
+        top: 15px;
+      }
+    }
+
+
     .spacexLanding1 {
       width: 63px;
       height: 38px;
