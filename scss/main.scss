@@ -55,6 +55,27 @@ a {
   }
 }
 
-img.marsTerrain {
-  width: 100%;
+.marsTerrain {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+
+.attribution {
+  position: absolute;
+  color: white;
+  font-size: .8rem;
+  white-space: nowrap;
+  text-shadow: 0 0 .1rem black;
+  bottom: 8px;
+  right: 8px;
+
+  a {
+    color: white;
+    text-shadow: 0 0 .1rem black;
+    bottom: 8px;
+    right: 8px;
+  }
 }
