@@ -1,5 +1,7 @@
 @use 'insight';
 @use 'map';
+@use 'findings';
+@use 'elevationFile';
 
 @font-face {
   font-family: 'Heebo';
@@ -35,4 +37,8 @@ html, body {
   position: relative;
   width: 1000px;
   margin: 0 auto;
+}
+
+.fat {
+  font-weight: 500;
 }

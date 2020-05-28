@@ -1,0 +1,65 @@
+.elevationFile {
+  position: relative;
+
+  a {
+    color: #603315;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .hint {
+    position: absolute;
+    pointer-events: none;
+    top: 40px;
+    left: 30px;
+    color: white;
+  }
+
+  .albaMons {
+    position: absolute;
+    top: 227px;
+    left: 30px;
+    width: 361px;
+    border-bottom: 2px solid #603315;
+  }
+
+  .olympusMons {
+    position: absolute;
+    top: 347px;
+    left: 30px;
+    width: 191px;
+    border-bottom: 2px solid #603315;
+  }
+
+  .tharsisMontes {
+    position: absolute;
+    width: 301px;
+    top: 482px;
+    left: 30px;
+    border-bottom: 2px solid #603315;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 160px;
+      top: 5px;
+      left: 183px;
+      transform: rotate(-14deg);
+      border-bottom: 2px solid #603315;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 91px;
+      top: 44px;
+      left: 181px;
+      transform: rotate(26deg);
+      border-bottom: 2px solid #603315;
+    }
+  }
+}
