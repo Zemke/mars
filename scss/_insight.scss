@@ -2,10 +2,26 @@
 
 #inSight {
   position: relative;
-  background-image: url("/insight.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
   padding: 2rem 2rem;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    background-image: url("/insight.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 880px;
+    width: 1050px;
+    top: -160px;
+    left: -40px;
+    z-index: 0;
+  }
+
+  .content {
+    z-index: 1;
+    position: relative;
+  }
 
   h1 {
     font-weight: 100;
@@ -68,7 +84,8 @@
   }
 
   #others {
-    margin-top: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -123,8 +140,8 @@
   .description {
     position: absolute;
     text-shadow: 0 0 .3rem black;
-    right: 4rem;
-    top: 11rem;
+    right: 1.8rem;
+    top: 6.5rem;
     width: 23rem;
   }
 
