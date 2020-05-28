@@ -1,15 +1,7 @@
+@use 'variables';
+
 .elevationFile {
   position: relative;
-
-  a {
-    color: #603315;
-    text-decoration: none;
-    font-weight: 500;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 
   .hint {
     position: absolute;
@@ -24,7 +16,7 @@
     top: 227px;
     left: 30px;
     width: 361px;
-    border-bottom: 2px solid #603315;
+    border-bottom: 2px solid variables.$marsBrown;
   }
 
   .olympusMons {
@@ -32,7 +24,7 @@
     top: 347px;
     left: 30px;
     width: 191px;
-    border-bottom: 2px solid #603315;
+    border-bottom: 2px solid variables.$marsBrown;
   }
 
   .tharsisMontes {
@@ -40,7 +32,7 @@
     width: 301px;
     top: 482px;
     left: 30px;
-    border-bottom: 2px solid #603315;
+    border-bottom: 2px solid variables.$marsBrown;
 
     &::before {
       content: "";
@@ -49,7 +41,7 @@
       top: 5px;
       left: 183px;
       transform: rotate(-14deg);
-      border-bottom: 2px solid #603315;
+      border-bottom: 2px solid variables.$marsBrown;
     }
 
     &::after {
@@ -59,7 +51,7 @@
       top: 44px;
       left: 181px;
       transform: rotate(26deg);
-      border-bottom: 2px solid #603315;
+      border-bottom: 2px solid variables.$marsBrown;
     }
   }
 }

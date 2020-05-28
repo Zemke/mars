@@ -1,3 +1,5 @@
+@use 'variables';
+
 #map {
   .imageCtxContainer {
     position: relative;
@@ -22,9 +24,8 @@
 
       &.mouseover,
       &:hover {
-        background-color: #603315;
-        color: #603315;
-        cursor: pointer;
+        background-color: variables.$marsBrown;
+        color: variables.$marsBrown;
       }
     }
 

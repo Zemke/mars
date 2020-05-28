@@ -1,3 +1,4 @@
+@use 'variables';
 @use 'insight';
 @use 'map';
 @use 'findings';
@@ -41,4 +42,15 @@ html, body {
 
 .fat {
   font-weight: 500;
+}
+
+a {
+  color: variables.$marsBrown;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }
