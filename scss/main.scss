@@ -80,3 +80,15 @@ a {
     right: 8px;
   }
 }
+
+ul {
+  list-style-type: square;
+}
+
+.more {
+  margin-top: 2rem;
+
+  ul {
+    margin-left: 3rem;
+  }
+}
