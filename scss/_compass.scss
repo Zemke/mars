@@ -1,5 +1,6 @@
 .compass { display: inline-block; }
 .compass::before { content: "\2191"; }
+.compass.na { visibility: hidden; }
 .compass.N { transform: scale(-1) rotate(0deg); }
 .compass.NNE { transform: scale(-1) rotate(22.5deg); }
 .compass.NE { transform: scale(-1) rotate(45deg); }

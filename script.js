@@ -15,13 +15,12 @@ const locMonth = {
 
 window.addEventListener('load', async () => {
   // GET https: //api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0
-  const data = await fetch('http://localhost:5000/insight-weather.json').then(res => res.json());
+  const data = await fetch('https://mars.zemke.io/nasainsightweather').then(res => res.json());
   latest(data);
   others(data);
 });
 
 function createBox(sol, lastUtc, AT, WD) {
-  console.log("WD", WD);
   return `
         <div class="sol">
             <p>
@@ -32,15 +31,15 @@ function createBox(sol, lastUtc, AT, WD) {
         </div>
         <div class="temperature">
           <div>
-            <span class="large">${Math.round(AT['mx'])}°&#8239;C</span>
+            <span class="large">${AT?.mx ? (Math.round(AT['mx']) + '°&#8239;C') : 'n/a'}</span>
             <span class="slash">/</span>
-            <span class="large">${Math.round(AT['mn'])}°&#8239;C</span>
+            <span class="large">${AT?.mn ? (Math.round(AT['mn']) + '°&#8239;C') : 'n/a'}</span>
           </div>
         </div>
         <div class="wind">
           <div>
-            <div class="compass ${WD["compass_point"]}"></div>
-          </div>  
+            <div class="compass ${WD?.["compass_point"] || 'na'}"></div>
+          </div>
         </div>
       `;
 }
@@ -66,3 +65,4 @@ function others(data) {
     othersElem.append(div);
   });
 }
+
