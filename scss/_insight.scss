@@ -159,4 +159,12 @@
   #season {
     font-weight: 500;
   }
+
+  p.data-na {
+    position: absolute;
+    z-index: 1;
+    bottom: -0.5rem;
+    font-size: 0.8rem;
+    color: #ff5050;
+  }
 }
