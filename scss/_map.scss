@@ -54,6 +54,26 @@
       }
     }
 
+    .perseveranceLine {
+      width: 3px;
+      height: 549px;
+      left: 102px;
+      background-color: #fff;
+      bottom: 0;
+    }
+
+    .perseverance {
+      left: 96px;
+      top: 441px;
+
+      &::after {
+        content: "Perseverance Rover";
+        top: -19px;
+        right: -37px;
+      }
+    }
+
+
     .olympusMons {
       left: 499px;
       top: 450px;
@@ -244,5 +264,29 @@
       margin: 0;
       width: 100%;
     }
+  }
+}
+
+.perseveranceLandingSite {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 337px;
+    left: 102px;
+    background-color: #fff;
+    top: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 352px;
+    height: 3px;
+    left: 102px;
+    background-color: #fff;
+    top: 337px;
   }
 }
