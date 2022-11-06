@@ -46,6 +46,10 @@ function createBox(sol, lastUtc, AT, WD) {
 
 function latest(data) {
   const sol = [...(data["sol_keys"])].reverse()[0];
+  if (sol == null || data[sol] == null) {
+    document.getElementById('latest').textContent = 'Not enough data from InSight.';
+    return;
+  }
   const AT = data[sol]['AT'];
   const lastUtc = new Date(data[sol]['Last_UTC']);
   document.getElementById('latest').innerHTML =
