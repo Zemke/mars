@@ -1,0 +1,23 @@
+{
+  "name": "mars",
+  "version": "1.0.0",
+  "description": "Mars information landing page",
+  "scripts": {
+    "start": "sass scss/main.scss main.css && serve"
+    "build": "sass scss/main.scss main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zemke/mars.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zemke/mars/issues"
+  },
+  "homepage": "https://github.com/Zemke/mars#readme",
+  "dependencies": {
+    "sass": "^1.56.0",
+    "serve": "^14.0.1"
+  }
+}
